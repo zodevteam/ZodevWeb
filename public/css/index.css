@@ -11,6 +11,7 @@
     --secondary-color: #0E185F;
     --default-white-color: #EEEEEE;
     --default-black-color: #1B1A17;
+    --default-border-color: #4D77FF;
     --default-padding: 10px;
     --default-border-radius: 10px;
     --default-font-family: font-family: 'Poppins', sans-serif;
@@ -24,6 +25,7 @@ header {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    user-select: none;
 }
 
 nav {
@@ -55,4 +57,63 @@ nav > ul > a:hover {
 
 .selected {
     font-weight: bold;
+}
+
+.apps-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    max-width: 1000px;
+    row-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+}
+
+.app {
+    border: 0.5px solid var(--default-border-color);
+    border-radius: 5px;
+    position: relative;
+    margin: 5px;
+    transition-duration: 0.4s;
+}
+
+.app:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition-duration: 0.4s;
+}
+
+.app > .thumbnail {
+    width: 100%;
+    height: 90%;
+    object-fit: contain;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.app > .update-ad {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--main-color);
+    color: var(--default-white-color);
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: var(--default-border-radius);
+    padding: var(--default-padding);
+    user-select: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    display: none;
+}
+
+.app > .app-title {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--default-white-color);
+    padding: 5px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    user-select: none;
 }

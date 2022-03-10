@@ -12,4 +12,4 @@ app.get("/es", (req, res) => {
     res.sendFile(__dirname + "/public/html/es/index.html")
 });
 
-app.listen(port);
+app.listen(port, () => {console.log(`http://localhost:${port}`)});
